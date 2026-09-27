@@ -34,41 +34,17 @@ OpenRouter is one account that gives access to OpenAI, Claude, Gemini and Perple
    `OPENROUTER_API_KEY=sk-or-v1-your-key-here`
 3. Click **File > Save As**. Go to the folder. Set **Save as type** to **All Files**. Name the file exactly `.env` and click Save.
 
-### 5. Choose the four models
+### 5. Install it (once)
 
-1. In the folder, open `backend`, right-click `config.py`, choose **Open with > Notepad**.
-2. Replace the models part so it reads exactly like this, then save:
+In the folder, double-click **Setup (run once).bat**. A black window installs everything. When it says Done, press any key.
 
-```
-COUNCIL_MODELS = [
-    "openai/gpt-5.4-mini",
-    "anthropic/claude-sonnet-5",
-    "google/gemini-3.8-flash",
-    "perplexity/sonar",
-]
-
-CHAIRMAN_MODEL = "google/gemini-3.8-flash"
-```
-
-That gives one model each from OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini) and Perplexity. Perplexity Sonar searches the web, so it brings in current information.
-
-### 6. Install the project (once)
-
-1. Open the folder in File Explorer. Click the address bar, type `powershell` and press Enter. A PowerShell window opens inside the folder.
-2. Type `uv sync` and press Enter. Wait until it finishes.
-3. Type `cd frontend` and press Enter, then `npm install` and press Enter. Wait until it finishes, then close the window.
+The four models are already set: one each from OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini) and Perplexity. Perplexity searches the web, so it brings in current information.
 
 ## Start it each day
 
-You need two PowerShell windows. Keep both open while you use it.
+Double-click **Start Council.bat** in the folder. Two black windows open (leave them open), and the council opens in the browser after a few seconds. If the page is blank, wait five seconds and refresh.
 
-1. **Window 1:** open the folder, type `powershell` in the address bar, press Enter, then type:
-   `uv run python -m backend.main`
-2. **Window 2:** open the `frontend` folder inside the folder, type `powershell` in the address bar, press Enter, then type:
-   `npm run dev`
-3. Open Chrome or Edge and go to http://localhost:5173
-
-To stop, close both PowerShell windows.
+To stop, close both black windows.
 
 ## Ask a question and read the answer
 
@@ -87,9 +63,8 @@ About 8 to 12 US cents per question (about 7 to 11 rupees) with the four models 
 
 ## If it stops working
 
-- **Page will not open:** check that both PowerShell windows are still open and running. If not, start them again.
-- **"running scripts is disabled" in Window 2:** type `npm.cmd run dev` instead of `npm run dev`.
+- **Page will not open:** close both black windows and double-click **Start Council.bat** again.
 - **No answers, or an error about credits or payment:** your OpenRouter credit has run out. Add more at https://openrouter.ai/settings/credits
 - **Error about the key or "unauthorized":** open the `.env` file in Notepad and check that the key is pasted correctly with no spaces. Create a new key if needed.
-- **One model shows no answer:** that model may have been renamed or retired. Look up the current name at https://openrouter.ai/models and change it in `config.py`, then restart both windows.
-- **Still stuck:** take a screenshot of both PowerShell windows and send it to DK.
+- **One model shows no answer:** that model may have been renamed or retired. Look up the current name at https://openrouter.ai/models and change it in `backend\\config.py` with Notepad, then start the council again.
+- **Still stuck:** take a screenshot of both black windows and send it to DK.
