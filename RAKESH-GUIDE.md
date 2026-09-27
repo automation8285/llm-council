@@ -66,5 +66,5 @@ About 8 to 12 US cents per question (about 7 to 11 rupees) with the four models 
 - **Page will not open:** close both black windows and double-click **Start Council.bat** again.
 - **No answers, or an error about credits or payment:** your OpenRouter credit has run out. Add more at https://openrouter.ai/settings/credits
 - **Error about the key or "unauthorized":** open the `.env` file in Notepad and check that the key is pasted correctly with no spaces. Create a new key if needed.
-- **One model shows no answer:** that model may have been renamed or retired. Look up the current name at https://openrouter.ai/models and change it in `backend\\config.py` with Notepad, then start the council again.
+- **One model shows no answer:** that model may have been renamed or retired. Look up the current name at https://openrouter.ai/models and change it in `backend\config.py` with Notepad, then start the council again.
 - **Still stuck:** take a screenshot of both black windows and send it to DK.
